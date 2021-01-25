@@ -4,7 +4,7 @@ const http = require('http').createServer(app);
 const io = require('socket.io')(http);
 const redis = require('socket.io-redis');
   app.get ( '/' , ( req, res ) => { 
-    res.sendFile (__dirname + '/index.html' ); 
+   console.log("헬로우월드")
   });
   io.adapter(redis({ host: 'localhost', port: 6081 }));
 
