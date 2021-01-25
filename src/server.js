@@ -8,11 +8,12 @@ const redis = require('socket.io-redis');
   });
   io.adapter(redis({ host: 'localhost', port: 6081 }));
 
-//   io.emit('some event', { someProperty: 'some value', otherProperty: 'other value' });
-
-io.on('connection', (socket) => {
-    // socket.broadcast.emit('hello', 'to all clients except sender');
-    // socket.to('room42').emit('hello', "to all clients in 'room42' room except sender");
+  io.emit('hello', 'to all clients');
+  io.to('room42').emit('hello', "to all clients in 'room42' room");
+   
+  io.on('connection', (socket) => {
+    socket.broadcast.emit('hello', 'to all clients except sender');
+    socket.to('room42').emit('hello', "to all clients in 'room42' room except sender");
   });
 
 http.listen(3050, () => {
