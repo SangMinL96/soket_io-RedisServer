@@ -1,0 +1,21 @@
+{
+  "name": "soket_io-RedisServer",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "lsm <hwon3794@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-node": "^0.0.1-security",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.7",
+    "socket.io": "^3.1.0",
+    "socket.io-redis": "^6.0.1"
+  },
+  "scripts": {
+    "dev": "nodemon --exec babel-node src/server.js"
+  },
+  "devDependencies": {
+    "babel-core": "^7.0.0-bridge.0"
+  }
+}
